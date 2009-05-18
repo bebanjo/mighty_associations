@@ -1,0 +1,1 @@
+require 'mighty_associations'

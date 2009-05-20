@@ -1,0 +1,15 @@
+Gem::Specification.new do |s|
+  s.name = "mighty_associations"
+  s.version = "0.0.1"
+  s.authors = ["Sergio Gil", "Luismi Cavallé"]
+  s.email = "ballsbreaking@bebanjo.com"
+  s.homepage = "http://github.com/bebanjo/mighty_associations"
+  s.summary = "Traversing superpowers for your ActiveRecord associations"
+  s.has_rdoc = true
+  s.extra_rdoc_files = ["README.markdown"]
+  s.rdoc_options = ["--line-numbers", "--inline-source", "--main", "README.rdoc"]
+  s.files = [
+    "README.markdown",
+    "lib/mighty_associations.rb"
+  ]
+end

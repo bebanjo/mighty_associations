@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 1) do
     t.integer :task_id
     t.string :name
   end
+  create_table :tags do |t|
+    t.string :name
+  end
+  create_table :taggings do |t|
+    t.integer :tag_id, :taggable_id
+    t.string :taggable_type
+  end
+  
 end
 
 def empty_tables
@@ -48,10 +56,22 @@ class Project < ActiveRecord::Base
   named_scope :five_letters, :conditions => "LENGTH(name) = 5"
 end
 
+class Tag < ActiveRecord::Base
+  has_many :taggings
+end
+
+class Tagging < ActiveRecord::Base
+  belongs_to :tag
+  belongs_to :taggable, :polymorphic => true
+end
+
 class Company < ActiveRecord::Base
   has_many :projects
   has_many :tasks, :through => :projects
   
   named_scope :five_letters, :conditions => "LENGTH(name) = 5"
+  
+  has_many :taggings, :as => :taggable, :dependent => :destroy, :include => :tag
+  has_many :tags, :through => :taggings
 end
 

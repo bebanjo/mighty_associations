@@ -72,5 +72,13 @@ class MightyAssociationsTest < Test::Unit::TestCase
     assert_equal([company1], Project.five_letters.companies)
   end
   
+  def test_polymorphic
+    company1 = Company.create!(:name => 'Wadus')
+    company2 = Company.create!(:name => 'WadusWadus')
+    tag = Tag.create!(:name => 'wadus')
+    Tagging.create!(:tag => tag, :taggable => company1)
+    assert_equal([tag], Company.tags)
+  end
+  
     
 end

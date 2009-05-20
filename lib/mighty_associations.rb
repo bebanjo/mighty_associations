@@ -5,10 +5,11 @@ class ActiveRecord::Base
       has_many_without_class_methods(*args, &block)
       reflection = reflections[args.first]
       if reflection.options[:through]
+        through_association = reflection.through_reflection.options[:as] ? reflection.through_reflection.name : reflection.through_reflection.name.to_s.singularize
         class_eval <<-RUBY, __FILE__, __LINE__
           def self.#{reflection.name}
             ::#{reflection.class_name}.scoped(
-              :joins => :#{reflection.through_reflection.name.to_s.singularize},
+              :include => :#{through_association},
               :conditions => {"#{reflection.through_reflection.table_name}.#{reflection.through_reflection.primary_key_name}" => all(:select => :id)})
           end
         RUBY

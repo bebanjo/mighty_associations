@@ -27,7 +27,7 @@ namespace :gem do
     lines = File.new('mighty_associations.gemspec').readlines
     lines.each do |line|
       next unless line =~ /version = "\d+\.\d+\.(\d+)"/
-      line.gsub!(/\d+"/, "#{$1.to_i + 1}'")
+      line.gsub!(/\d+"/, "#{$1.to_i + 1}\"")
     end
     File.open('mighty_associations.gemspec', 'w') do |f|
       lines.each do |line|

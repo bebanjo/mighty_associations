@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.markdown"]
   s.rdoc_options = ["--line-numbers", "--inline-source", "--main", "README.rdoc"]
   s.files = [
-    "README.markdown",
+    "README.rdoc",
     "lib/mighty_associations.rb"
   ]
 end

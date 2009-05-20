@@ -1,5 +1,4 @@
-Mighty Associations
-===================
+= Mighty Associations
 
 Extends many of your associations for free. Given the following models:
 

@@ -21,18 +21,14 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-namespace :gem do
-  desc "Increments the Gem version in mighty_associations.gemspec"
-  task :increment do
-    lines = File.new('mighty_associations.gemspec').readlines
-    lines.each do |line|
-      next unless line =~ /version = "\d+\.\d+\.(\d+)"/
-      line.gsub!(/\d+"/, "#{$1.to_i + 1}\"")
-    end
-    File.open('mighty_associations.gemspec', 'w') do |f|
-      lines.each do |line|
-        f.write(line)
-      end
-    end
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "mighty_associations"
+    gemspec.authors = ["Sergio Gil", "Luismi Cavallé"]
+    gemspec.email = "ballsbreaking@bebanjo.com"
+    gemspec.homepage = "http://github.com/bebanjo/mighty_associations"
+    gemspec.summary = "Traversing superpowers for your ActiveRecord associations"
   end
+rescue LoadError
 end

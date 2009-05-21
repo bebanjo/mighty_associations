@@ -25,7 +25,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "mighty_associations"
-    gemspec.authors = ["Sergio Gil", "Luismi Cavallé"]
+    gemspec.authors = ["Sergio Gil", "Luismi CavallÃ©"]
     gemspec.email = "ballsbreaking@bebanjo.com"
     gemspec.homepage = "http://github.com/bebanjo/mighty_associations"
     gemspec.summary = "Traversing superpowers for your ActiveRecord associations"

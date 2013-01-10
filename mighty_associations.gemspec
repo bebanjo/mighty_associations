@@ -33,8 +33,11 @@ Gem::Specification.new do |s|
   s.summary = %q{Traversing superpowers for your ActiveRecord associations}
   s.test_files = [
     "test/mighty_associations_test.rb",
-     "test/test_helper.rb"
+    "test/test_helper.rb"
   ]
+
+  s.add_runtime_dependency 'activerecord', '>= 3.1.0'
+  s.add_development_dependency 'sqlite3'
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

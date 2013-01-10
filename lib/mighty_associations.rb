@@ -10,13 +10,13 @@ class ActiveRecord::Base
           def self.#{reflection.name}
             ::#{reflection.class_name}.scoped(
               :include => :#{through_association},
-              :conditions => {"#{reflection.through_reflection.table_name}.#{reflection.through_reflection.primary_key_name}" => all(:select => :id)})
+              :conditions => {"#{reflection.through_reflection.table_name}.#{reflection.through_reflection.foreign_key}" => all(:select => :id)})
           end
         RUBY
       else
         class_eval <<-RUBY, __FILE__, __LINE__
           def self.#{reflection.name}
-            ::#{reflection.class_name}.scoped(:conditions => {:#{reflection.primary_key_name} => all(:select => :id)})
+            ::#{reflection.class_name}.scoped(:conditions => {:#{reflection.foreign_key} => all(:select => :id)})
           end
         RUBY
       end
@@ -28,7 +28,7 @@ class ActiveRecord::Base
       reflection = reflections[args.first]
       class_eval <<-RUBY, __FILE__, __LINE__
         def self.#{reflection.name.to_s.pluralize}
-          ::#{reflection.class_name}.scoped(:conditions => {:#{reflection.active_record.primary_key} => all(:select => :#{reflection.primary_key_name}).map(&:#{reflection.primary_key_name})})
+          ::#{reflection.class_name}.scoped(:conditions => {:#{reflection.active_record.primary_key} => all(:select => :#{reflection.foreign_key}).map(&:#{reflection.foreign_key})})
         end
       RUBY
     end

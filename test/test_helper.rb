@@ -2,7 +2,7 @@ require 'test/unit'
 require 'rubygems'
 require 'active_record'
 require 'active_support/all'
-require 'ruby-debug'
+#require 'ruby-debug'
 
 ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database => ':memory:'}}
 ActiveRecord::Base.establish_connection('test')

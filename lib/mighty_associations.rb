@@ -1,3 +1,6 @@
+module MightyAssociations
+end
+
 class ActiveRecord::Base
   
   class << self

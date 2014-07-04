@@ -1,12 +1,16 @@
 # -*- encoding: utf-8 -*-
 
+$:.unshift File.expand_path('../lib', __FILE__)
+require 'mighty_associations/version'
+
 Gem::Specification.new do |s|
   s.name = %q{mighty_associations}
-  s.version = "0.0.4"
+  s.version = MightyAssociations::VERSION
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Sergio Gil", "Luismi Cavallé"]
-  s.date = %q{2009-05-21}
+  s.authors = ["Sergio Gil", "Luismi Cavallé", "Paco Guzmán"]
+  s.homepage  = "https://github.com//mighty_associations"
+  s.license = "MIT"
   s.email = %q{ballsbreaking@bebanjo.com}
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -16,10 +20,10 @@ Gem::Specification.new do |s|
      "MIT-LICENSE",
      "README.rdoc",
      "Rakefile",
-     "VERSION",
      "init.rb",
      "install.rb",
      "lib/mighty_associations.rb",
+     "lib/mighty_associations/version.rb",
      "mighty_associations.gemspec",
      "test/mighty_associations_test.rb",
      "test/test_helper.rb",
@@ -36,7 +40,7 @@ Gem::Specification.new do |s|
     "test/test_helper.rb"
   ]
 
-  s.add_runtime_dependency 'activerecord', '>= 3.1.0'
+  s.add_runtime_dependency 'activerecord', '>= 3.1.0', '< 4.0.0'
   s.add_development_dependency 'sqlite3'
 
   if s.respond_to? :specification_version then

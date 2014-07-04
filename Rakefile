@@ -21,15 +21,3 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "mighty_associations"
-    gemspec.authors = ["Sergio Gil", "Luismi Cavallé"]
-    gemspec.email = "ballsbreaking@bebanjo.com"
-    gemspec.homepage = "http://github.com/bebanjo/mighty_associations"
-    gemspec.summary = "Traversing superpowers for your ActiveRecord associations"
-  end
-rescue LoadError
-end

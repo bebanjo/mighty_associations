@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mighty_associations (0.0.4)
+    mighty_associations (0.1.0)
       activerecord (>= 3.1.0, < 4.0.0)
 
 GEM

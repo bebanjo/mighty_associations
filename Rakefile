@@ -1,4 +1,6 @@
 # -*- encoding: utf-8 -*-
+require "rubygems"
+require "bundler/setup"
 require 'rake'
 require 'rake/testtask'
 require 'rdoc/task'

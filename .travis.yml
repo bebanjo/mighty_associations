@@ -1,13 +1,7 @@
-before_install:
-  - gem --version
 rvm:
-  - ree
-  - 1.9.3
-  - 2.0.0
-  - 2.1.2
+  - 2.1.5
 gemfile:
-  - Gemfile
-matrix:
-  allow_failures:
-    - rvm: 2.1.2
-    - rvm: 2.0.0
+  - gemfiles/activerecord_4_0.gemfile
+  - gemfiles/activerecord_4_2.gemfile
+  - gemfiles/activerecord_4_2.gemfile
+script: "bundle exec rake test"

@@ -1,15 +1,15 @@
-require 'test/unit'
 require 'rubygems'
+require 'minitest/autorun'
 require 'active_record'
 require 'active_support/all'
-#require 'ruby-debug'
+#require 'byebug'
 
 ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database => ':memory:'}}
-ActiveRecord::Base.establish_connection('test')
+ActiveRecord::Base.establish_connection(:test)
 
 ActiveRecord::Schema.verbose = false
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(version: 1) do
   create_table :companies do |t|
     t.string :name
   end
@@ -51,10 +51,10 @@ end
 
 class Project < ActiveRecord::Base
   has_many :tasks
-  has_many :items, :through => :tasks
+  has_many :items, through: :tasks
   belongs_to :company
-  
-  scope :five_letters, lambda{ where("LENGTH(name) = 5") }
+
+  scope :five_letters, -> { where("LENGTH(name) = 5") }
 end
 
 class Tag < ActiveRecord::Base
@@ -63,16 +63,16 @@ end
 
 class Tagging < ActiveRecord::Base
   belongs_to :tag
-  belongs_to :taggable, :polymorphic => true
+  belongs_to :taggable, polymorphic: true
 end
 
 class Company < ActiveRecord::Base
   has_many :projects
-  has_many :tasks, :through => :projects
+  has_many :tasks, through: :projects
   
-  scope :five_letters, lambda { where("LENGTH(name) = 5") }
+  scope :five_letters, -> { where("LENGTH(name) = 5") }
   
-  has_many :taggings, :as => :taggable, :dependent => :destroy, :include => :tag
-  has_many :tags, :through => :taggings
+  has_many :taggings, -> { includes(:tag) }, as: :taggable, dependent: :destroy
+  has_many :tags, through: :taggings
 end
 

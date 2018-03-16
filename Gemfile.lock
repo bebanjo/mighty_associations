@@ -7,15 +7,15 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (3.2.19)
-      activesupport (= 3.2.19)
+    activemodel (3.2.22.5)
+      activesupport (= 3.2.22.5)
       builder (~> 3.0.0)
-    activerecord (3.2.19)
-      activemodel (= 3.2.19)
-      activesupport (= 3.2.19)
+    activerecord (3.2.22.5)
+      activemodel (= 3.2.22.5)
+      activesupport (= 3.2.22.5)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activesupport (3.2.19)
+    activesupport (3.2.22.5)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
@@ -27,14 +27,14 @@ GEM
       debugger-ruby_core_source (~> 1.3.5)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.3.5)
-    i18n (0.6.9)
-    json (1.7.6)
+    i18n (0.6.11)
+    json (1.7.7)
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     multi_json (1.10.1)
     rake (10.0.3)
     rbx-require-relative (0.0.9)
-    rdoc (3.12)
+    rdoc (3.12.2)
       json (~> 1.4)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
@@ -42,7 +42,7 @@ GEM
     ruby-debug-base (0.10.4)
       linecache (>= 0.3)
     sqlite3 (1.3.6)
-    tzinfo (0.3.39)
+    tzinfo (0.3.53)
 
 PLATFORMS
   ruby
@@ -54,3 +54,6 @@ DEPENDENCIES
   rdoc
   ruby-debug
   sqlite3
+
+BUNDLED WITH
+   1.16.1

@@ -32,7 +32,7 @@ GEM
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     multi_json (1.10.1)
-    rake (10.0.3)
+    rake (13.0.1)
     rbx-require-relative (0.0.9)
     rdoc (3.12.2)
       json (~> 1.4)

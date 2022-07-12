@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
     "test/test_helper.rb"
   ]
 
-  s.add_runtime_dependency 'activerecord', '>= 3.1.0', '< 4.0.0'
+  s.add_runtime_dependency 'activerecord', '>= 3.1.0', '< 8.0.0'
   s.add_development_dependency 'sqlite3'
 
   if s.respond_to? :specification_version then

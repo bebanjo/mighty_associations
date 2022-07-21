@@ -41,7 +41,7 @@ GEM
     ruby-debug-base (0.10.4)
       linecache (>= 0.3)
     sqlite3 (1.4.2)
-    tzinfo (0.3.59)
+    tzinfo (0.3.61)
 
 PLATFORMS
   ruby
